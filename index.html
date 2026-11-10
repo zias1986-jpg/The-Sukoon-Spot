@@ -44,7 +44,6 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 rounded-full border-2 border-gold-500 flex items-center justify-center bg-gradient-to-br from-gold-500/20 to-navy-900 shadow-inner">
-                    <!-- Luxury Recliner / Massage Chair Icon -->
                     <span class="text-gold-500 text-xl font-bold">🪑</span>
                 </div>
                 <div>
@@ -102,14 +101,20 @@
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500"><i class="fa-solid fa-chair"></i></span>
                             <select id="service-select" required onchange="updatePrice()" class="w-full bg-navy-900 border border-slate-700 rounded-xl pl-10 pr-8 py-2.5 text-sm focus:outline-none focus:border-gold-500 transition text-slate-100 appearance-none">
                                 <option value="" disabled selected>Choose a relaxation service...</option>
-                                <optgroup label="Full Body Massage Chair">
-                                    <option value="Full Body Chair - 10 Mins|59">Full Body Chair (10 Mins) - ₹59</option>
-                                    <option value="Full Body Chair - 20 Mins|99">Full Body Chair (20 Mins) - ₹99</option>
-                                    <option value="Full Body Chair - 30 Mins|139">Full Body Chair (30 Mins) - ₹139</option>
+                                <optgroup label="Basic Comfort Massage Chair">
+                                    <option value="Basic Comfort - 10 Mins|59">Basic Comfort (10 Mins) - ₹59</option>
+                                    <option value="Basic Comfort - 20 Mins|99">Basic Comfort (20 Mins) - ₹99</option>
+                                    <option value="Basic Comfort - 30 Mins|139">Basic Comfort (30 Mins) - ₹139 (Free Eye Massager)</option>
                                 </optgroup>
-                                <optgroup label="Eye Massager & Add-ons">
-                                    <option value="Warm Relax Eye Massager|49">Warm Relax Eye Massager - ₹49</option>
-                                    <option value="Full Combo (Chair + Eye)|169">Full Combo (Chair + Eye) - ₹169</option>
+                                <optgroup label="Ultimate Experience Massage Chair">
+                                    <option value="Ultimate Experience - 10 Mins|89">Ultimate Experience (10 Mins) - ₹89</option>
+                                    <option value="Ultimate Experience - 20 Mins|149">Ultimate Experience (20 Mins) - ₹149</option>
+                                    <option value="Ultimate Experience - 30 Mins|199">Ultimate Experience (30 Mins) - ₹199 (Free Eye Massager)</option>
+                                </optgroup>
+                                <optgroup label="Add-ons & Duos">
+                                    <option value="Eye Massager Add-on|29">Eye Massager Add-on - +₹29</option>
+                                    <option value="Duo Mini (20 Mins)|209">Duo Mini (20 Mins) - ₹209</option>
+                                    <option value="Duo Full (30 Mins)|309">Duo Full (30 Mins) - ₹309</option>
                                 </optgroup>
                             </select>
                             <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-500"><i class="fa-solid fa-chevron-down text-xs"></i></span>
@@ -162,8 +167,8 @@
 
             <!-- Quick Info Footer -->
             <div class="mt-6 pt-4 border-t gold-border text-center text-xs text-slate-400">
-                <p>📍 Shop# 3, Lotus Park, near MS College, Kausa, Mumbra</p>
-                <p class="text-gold-400/90 mt-1 font-semibold">Owners: Aaquib Sk (+91 9833816858) | Noman Sk (+91 8879015681)</p>
+                <p>📍 Shop# 3, Lotus Park, Kadar Palace, Kausa, Mumbra</p>
+                <p class="text-gold-400/90 mt-1 font-semibold">WhatsApp Business: +91 9152779716</p>
             </div>
         </section>
 
@@ -319,7 +324,7 @@
 
         function sendWhatsAppReceipt(tx) {
             const businessNumber = "919152779716";
-            const message = `✨ *THE SUKOON SPOT* ✨\n_Massage Chair Lounge & Sanctuary_\n📍 Shop# 3, Lotus Park, near MS College, Kausa, Mumbra\n\n*INVOICE RECEIPT*\n--------------------------------\n👤 *Customer:* ${tx.name}\n📞 *Mobile:* ${tx.mobile}\n💆 *Service:* ${tx.service}\n💰 *Amount Paid:* ₹${tx.amount} (${tx.mode})\n🔖 *Loyalty:* ${tx.loyalty}\n${tx.notes ? '📝 *Notes:* ' + tx.notes + '\n' : ''}--------------------------------\n🎁 *Loyalty Reminder:* Complete 9 visits within 90 days!\n- 3rd Visit: 25% Off\n- 6th Visit: 50% Off\n- 9th Visit: 100% FREE\n\nThank you for visiting The Sukoon Spot! Step In • Stress Out.`;
+            const message = `✨ *THE SUKOON SPOT* ✨\n_Massage Chair Lounge & Sanctuary_\n📍 Shop# 3, Lotus Park, Kadar Palace, near MS College, Kausa, Mumbra\n\n*INVOICE RECEIPT*\n--------------------------------\n👤 *Customer:* ${tx.name}\n📞 *Mobile:* ${tx.mobile}\n💆 *Service:* ${tx.service}\n💰 *Amount Paid:* ₹${tx.amount} (${tx.mode})\n🔖 *Loyalty:* ${tx.loyalty}\n${tx.notes ? '📝 *Notes:* ' + tx.notes + '\n' : ''}--------------------------------\n🎁 *Loyalty Reminder:* Complete 9 visits within 90 days!\n- 3rd Visit: 25% Off\n- 6th Visit: 50% Off\n- 9th Visit: 100% FREE\n\nThank you for visiting The Sukoon Spot! Step In • Stress Out.\n\nWhatsApp Business: +91 9152779716`;
 
             const encodedMsg = encodeURIComponent(message);
             const targetNum = tx.mobile.length === 10 ? `91${tx.mobile}` : businessNumber;
