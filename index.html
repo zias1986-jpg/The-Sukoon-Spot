@@ -43,8 +43,10 @@
     <header class="bg-navy-800 border-b gold-border sticky top-0 z-50 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-full border-2 border-gold-500 flex items-center justify-center bg-gradient-to-br from-gold-500/20 to-navy-900 shadow-inner">
-                    <span class="text-gold-500 text-xl font-bold">🪑</span>
+                <!-- Logo Container -->
+                <div class="w-12 h-12 rounded-full border-2 border-gold-500 overflow-hidden flex items-center justify-center bg-navy-900 shadow-inner">
+                    <img src="logo.png" alt="The Sukoon Spot Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="text-gold-500 text-xl font-bold" style="display:none;">🪑</span>
                 </div>
                 <div>
                     <h1 class="font-serif text-2xl font-bold tracking-wider text-gold-500">THE SUKOON SPOT</h1>
@@ -401,7 +403,7 @@
             const totalRevenue = transactions.reduce((sum, t) => sum + t.amount, 0);
             
             let onlineSum = 0;
-            let cashSum = 0;
+            let cashSum =0;
 
             transactions.forEach(t => {
                 if (t.mode === 'UPI' || t.mode === 'Online') {
