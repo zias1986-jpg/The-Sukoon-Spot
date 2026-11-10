@@ -318,7 +318,7 @@
         }
 
         function sendWhatsAppReceipt(tx) {
-            const businessNumber = "918879015681";
+            const businessNumber = "919152779716";
             const message = `✨ *THE SUKOON SPOT* ✨\n_Massage Chair Lounge & Sanctuary_\n📍 Shop# 3, Lotus Park, near MS College, Kausa, Mumbra\n\n*INVOICE RECEIPT*\n--------------------------------\n👤 *Customer:* ${tx.name}\n📞 *Mobile:* ${tx.mobile}\n💆 *Service:* ${tx.service}\n💰 *Amount Paid:* ₹${tx.amount} (${tx.mode})\n🔖 *Loyalty:* ${tx.loyalty}\n${tx.notes ? '📝 *Notes:* ' + tx.notes + '\n' : ''}--------------------------------\n🎁 *Loyalty Reminder:* Complete 9 visits within 90 days!\n- 3rd Visit: 25% Off\n- 6th Visit: 50% Off\n- 9th Visit: 100% FREE\n\nThank you for visiting The Sukoon Spot! Step In • Stress Out.`;
 
             const encodedMsg = encodeURIComponent(message);
